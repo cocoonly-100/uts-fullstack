@@ -1,7 +1,8 @@
 import "@/app/globals.css";
 import {completetablegenerator} from '@/app/lib'
 
-
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator('presensiharian')
 
 export default function Home() {
   const data=[

@@ -1,5 +1,7 @@
 import "@/app/globals.css";
 import { completetableoonecolumngenerator } from "../lib";
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator('informasifakultassainsdanteknologi')
 export default function Home() {
   let data = [
   [

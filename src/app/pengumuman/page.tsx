@@ -1,5 +1,6 @@
 import "@/app/globals.css";
-
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator('pengumuman')
 export default function Home() {
 
     let proc=[]

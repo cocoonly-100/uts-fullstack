@@ -1,5 +1,6 @@
 import "@/app/globals.css";
-
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator('permohonan')
 export default function Home() {
   let u=['Surat Keterangan Aktif Kuliah','Surat Keterangan Bebas Pustaka','Bebas Keuangan','Bebas Kesehatan','Bebas Akademik']
   let main=[]

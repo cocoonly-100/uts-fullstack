@@ -1,5 +1,7 @@
 import "@/app/globals.css";
 import {completetablegenerator} from '@/app/lib'
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator('dokumenakademik')
 export default function Home() {
   let data = [
   ["No.",'2vw', "Dokumen",'8vw',"Pemilik",'14vw', "Nomor",'14vw', "Tanggal",'10vw', "Judul",'20vw','Aksi','4vw'],

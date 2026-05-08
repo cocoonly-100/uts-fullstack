@@ -1,6 +1,8 @@
 import "@/app/globals.css";
 import {databawahkrs} from "../data";
 import { completekrsgeneration} from "../lib";
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator"20241semester1"
 
 export default function Home() {
 const datadirikrs=[

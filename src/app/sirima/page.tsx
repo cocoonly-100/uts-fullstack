@@ -1,5 +1,7 @@
 import "@/app/globals.css";
 import { completetablegenerator } from "../lib";
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator"sirima"
 export default function Home() {
    let data=[
   ["No.", "8vw", "Tahun", "12vw", "Tahapan", "14vw", "Status Versi 2", "28vw", "Aksi", "12vw"],

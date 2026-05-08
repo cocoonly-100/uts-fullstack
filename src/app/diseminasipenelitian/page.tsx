@@ -1,4 +1,6 @@
 import "@/app/globals.css";
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator"diseminasipenelitian"
 export default function Home() {
   return (
     <main>

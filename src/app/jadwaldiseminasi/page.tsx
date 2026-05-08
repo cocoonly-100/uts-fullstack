@@ -1,5 +1,7 @@
 import "@/app/globals.css";
 import { completetableoonecolumngenerator,completetablegenerator } from "../lib";
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator"jadwaldiseminasi"
 export default function Home() {
     let data = [
   ["ID", "4vw", "Program Studi", "8vw", "Judul Penelitian", "33vw", "Mulai", "8vw", "Selesai", "8vw", "Kuota Peserta", "6vw", "Aksi", "3vw"],

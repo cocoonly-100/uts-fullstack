@@ -1,6 +1,6 @@
 import "@/app/globals.css";
 import { metadatagenerator } from "../metadata";
-export const metadata=metadatagenerator"publikasipenelitian"
+export const metadata=metadatagenerator("publikasipenelitian")
 export default function Home() {
   return (
     <main>

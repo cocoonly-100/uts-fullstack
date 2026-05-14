@@ -1,5 +1,7 @@
 import "@/app/globals.css";
 import { completetablegenerator } from "../lib";
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator(sistempelayananmahasiswa)
 export default function Home() {
   let data=[['Nomor','18vw','Permohonan','30vw','Status','13vw','Aksi','11vw']]
   let data2=['Tambah Permohonan Baru','Permohonan Dalam Proses','Permohonan Tutup','Panduan']

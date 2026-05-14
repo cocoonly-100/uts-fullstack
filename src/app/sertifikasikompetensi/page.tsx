@@ -1,5 +1,7 @@
 import "@/app/globals.css";
 import { completetablegenerator} from "../lib";
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator(sertifikasikompeten)
 
 export default function Home() {
   let tabledata1=[

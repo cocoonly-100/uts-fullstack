@@ -1,6 +1,8 @@
 import "@/app/globals.css";
 import { completetableoonecolumngenerator } from "../lib";
 import Link from 'next/link';
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator(bantuan)
 
 export default function Home() {
     let m={color:'blue'}

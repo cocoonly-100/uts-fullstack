@@ -1,5 +1,7 @@
 import "@/app/globals.css";
 import { completetableoonecolumngenerator,completenoheadertablegenerator, tablegenerator } from "../lib";
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator(transkripakademiksementara)
 let a=0
 function buttongenerator(data){
     a=a+1

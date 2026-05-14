@@ -2,6 +2,8 @@ import "@/app/globals.css";
 import { completetablegenerator } from "../lib";
 import { groupCollapsed } from "console";
 import React from "react";
+import { metadatagenerator } from "../metadata";
+export const metadata=metadatagenerator(informasiakreditas)
 export default function Home() {
   let data1 = [
   [

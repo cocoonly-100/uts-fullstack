@@ -1,0 +1,137 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import Link from 'next/link';
+import "./globals.css";
+import UserDisplay from "./userdisplay";
+import LogoutButton from "./logoutbtn";
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+export const metadata: Metadata = {
+  title: "Website SIAM",
+  description: "website bernama SIAM untuk universitas xxxxxx",
+};
+
+const firstorder=['UMUM','KARTU STUDI','KARTU STUDI BARU','PENELITIAN','PERPUSTAKAAN','KEGIATAN LAPANGAN','KONFIGURASI']
+const secondorder=[
+  [
+    'Presensi Harian','Profil Mahasiswa','Pengumuman','Permohonan','Dokumen Akademik','Informasi Fakultas Sains dan Teknologi',
+    'Informasi Program Studi','Informasi Akreditasi','Sistem Pelayanan Mahasiswa','Kegiatan Mahasiswa','Program Altissia',
+    'Transkrip Akademik Sementara','Bantuan','Sertifikasi Kompetensi'
+  ],
+  [
+    '2024/1 Semester 1','2024/2 Semester 2'
+  ],
+  [
+    '2025/1 Revisi KRS'
+  ],
+  [
+    'Proposal Penelitian','Laporan Penelitian','Publikasi Penelitian','Diseminasi Penilitian','Persyaratan Diseminasi',
+    'Jadwal Diseminasi','SIRIMA'
+  ],
+  [
+    'Cari Buku','Keranjang','Daftar Reservasi','Riwayat Kunjungan'
+  ],
+  [
+    'Daftar Kegiatan'
+  ],
+  [
+    'Ubah Kata Kunci','Spada'
+  ],
+]
+const links=[
+  [
+    'presensiharian',
+    'profilmahasiswa',
+    'pengumuman',
+    'permohonan',
+    'dokumenakademik',
+    'informasifakultassainsdanteknologi',
+    'informasiprogramstudi',
+    'informasiakreditasi',
+    'sistempelayananmahasiswa',
+    'kegiatanmahasiswa',
+    'programaltissia',
+    'transkripakademiksementara',
+    'bantuan',
+    'sertifikasikompetensi'
+  ],
+  [
+    '20241semester1',
+    '20242semester2'
+  ],
+  [
+    '20242semester2'
+  ],
+  [
+    'proposalpenelitian',
+    'laporanpenelitian',
+    'publikasipenelitian',
+    'diseminasipenelitian',
+    'persyaratandiseminasi',
+    'jadwaldiseminasi',
+    'sirima'
+  ],
+  [
+    'caribuku',
+    'keranjang',
+    'daftarreservasi',
+    'riwayatkunjungan'
+  ],
+  [
+    'daftarkegiatan'
+  ],
+  [
+    'ubahkatakunci',
+    'spada'
+  ]
+]
+export default async function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const bigarray=[]
+  let a=0
+  for(let i=0;i<firstorder.length;i++){
+    bigarray.push(<div key={`firstorder-${i+1}`} className='greyboldtext'>{firstorder[i]}</div>)
+    for(let j=0;j<secondorder[i].length;j++){
+      a=a+1
+      bigarray.push(<Link key={`secondorder-${a}`} id={secondorder[i][j]} href={`/${links[i][j]}`} className='linkk' style={{color:' rgb(63, 100, 212)'}}>{secondorder[i][j]}</Link>)
+    }
+  }
+
+  return (
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col">
+        <div className='flexmiddle bold' style={{background:'#222222',color:'#999999',paddingLeft:'1.5vw',fontSize:'20px',width: '99vw',height:'5vh',position:'absolute',top:'0',left:'0'}}>
+            SIAM <LogoutButton/>
+        </div>
+        <div style={{background:'#ffffff',width:'99vw',display:'flex',position:'absolute',top:'5vh',paddingTop:'3vh'}}>
+          <div style={{background:'#cccccc',margin:'0 2vw 2vh 2vw',width:'20vw', flexShrink: '0',borderRadius:'5px',padding:'2vh 2% 2vh 2%' ,height: 'fit-content',  }}>
+            <img src='/frieren.jpeg'  style={{marginBottom:'1vh'}}/>
+            <div className='greyboldtext' style={{marginTop:'2vh',marginBottom:'3vh'}}>
+              <UserDisplay />
+            </div>
+            <hr style={{ border: '1px line white',marginBottom:'3vh' }} />
+            <div style={{wordWrap:'break-word',overflowWrap:'break-word'}}>
+              {bigarray}
+            </div>
+          </div>
+          <div>
+            {children}
+          </div>
+        </div>
+      </body>
+    </html>
+  );
+}

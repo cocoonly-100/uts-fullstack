@@ -1,0 +1,2 @@
+class Kegiatan < ApplicationRecord
+end

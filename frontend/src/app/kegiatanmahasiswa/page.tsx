@@ -72,6 +72,7 @@ export default function Home() {
       .then(data => {
         console.log('POST response:', data);
         // ✅ After successful POST, refresh the bottom table
+        setSearchCode('') 
         fetchBottomTable();
       })
       .catch(err => {
@@ -124,7 +125,7 @@ export default function Home() {
         <span style={{ padding: '0 1vw 0 2vw', fontWeight: 'bold' }}>Kode Kegiatan</span>
         <input
           style={{ width: '35vw', padding: '3px', background: '#ffffff', border: '1px solid black', borderRadius: '3px' }}
-          placeholder="Masukkan minimal 20 digit kode kegiatan anda disini"
+          placeholder="Masukkan kode lengkap"
           value={searchCode}
           onChange={(e) => setSearchCode(e.target.value)}
         />

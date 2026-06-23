@@ -16,13 +16,13 @@ export default function Home() {
       const data=(await result.json()).biodata.biodata
       console.log(data)
       setInitialData(data);
-      setData(data);  // ← Set data here too
+      setData(data);  
       setLoading(false);
     };
     fetchData();
   }, []);
 
-  // ✅ Handle field change
+
   const handleFieldChange = (sectionIndex: number, fieldIndex: number, value: string) => {
     const newData = [...data];
     newData[sectionIndex][1][fieldIndex + 1] = value;
@@ -40,7 +40,7 @@ export default function Home() {
     setIsEditing(false);
   };
 
-  // ✅ Show loading while fetching
+
   if (loading) {
     return (
       <main>
@@ -50,7 +50,7 @@ export default function Home() {
     );
   }
 
-  // ✅ Handle case where data is null
+
   if (!data || !Array.isArray(data)) {
     return (
       <main>

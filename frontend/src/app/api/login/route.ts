@@ -12,7 +12,7 @@ function cookiepropgen(time){
   }
 }
 const sessionprop=cookiepropgen(3600*24*30)
-const jwtprop=cookiepropgen(3600)
+const jwtprop=cookiepropgen(1800)
 
 async function reallogin(nim,password){
   console.log('manual')
